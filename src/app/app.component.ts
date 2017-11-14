@@ -4,6 +4,9 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
+// import { CadastraPiscinaPage } from '../pages/cadastra-piscina/cadastra-piscina';
+// import { RealizaTratamentoPage } from '../pages/realiza-tratamento/realiza-tratamento';
+
 @Component({
   templateUrl: 'app.html'
 })

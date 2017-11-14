@@ -7,8 +7,22 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+  piscinas = [
+    'Casa Belvedere',
+    'Casa Branca',
+    'CasaMento'
+  ];
 
+  piscinaSelecionada(piscina: string) {
+    console.log("Piscina Selecionada", piscina);
+  }
+
+  constructor(private navCtrl: NavController) {
+
+  }
+
+  navegarParaCadastraPiscina(): void {
+    this.navCtrl.push('CadastraPiscinaPage');
   }
 
 }

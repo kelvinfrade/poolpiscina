@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Parâmetros Atuais</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+
+    <ion-input type="text" placeholder="Nome da piscina" [(ngModel)]="nome"></ion-input>
+
+    <h6>Alcalinidade Total</h6>
+    <ion-item>
+      <ion-input type="text" placeholder="" [(ngModel)]="alcalinidadetotal"></ion-input>
+    </ion-item>
+    <br>
+    <h6>PH</h6>
+    <ion-item>
+      <ion-input type="text" placeholder="" [(ngModel)]="ph"></ion-input>
+    </ion-item>
+    <br>
+    <h6>Cloro Livre</h6>
+    <ion-item>
+      <ion-input type="text" placeholder="" [(ngModel)]="clorolivre"></ion-input>
+    </ion-item>
+    <br>
+    <button ion-button color="primary" full (click)="navegarParaResultadosPage()">Salvar</button>
+    <!--    <button ion-button color="primary" block (click)="doPrompt()">Salvar piscina</button> -->
+    <!--    <br>
+    <button ion-button full color="light" (click)="voltarParaHomePage()">Home (temp)</button>
+    <button ion-button color="light" full (click)="navegarParaRealizaTratamento()">Realizar Tratamento (temp)</button> -->
+  </ion-list>
+</ion-content>

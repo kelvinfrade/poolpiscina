@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Cadastrar Piscina</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <h6>Nome da piscina</h6> <!-- Esta linha sairá para implementação do Salvar com prompt que pergunta o nome da piscina -->
+    <ion-item>
+      <ion-input type="text" placeholder="Ex: Piscina de BH" [(ngModel)]="nome"></ion-input>
+    </ion-item>
+    <br>
+    <h6>Informar volume</h6>
+    <ion-item>
+      <ion-input type="text" placeholder="Volume (em litros)" [(ngModel)]="volume"></ion-input>
+    </ion-item>
+    <br>
+    <h6>Calcular volume (em metros)</h6>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col col-12>
+          <ion-item>
+            <ion-label>Formato</ion-label>
+            <ion-select [(ngModel)]="formato">
+              <ion-option value="retangular">Retangular</ion-option>
+              <ion-option value="quadrada">Quadrada</ion-option>
+              <ion-option value="oval">Oval</ion-option>
+              <ion-option value="redonda">Redonda</ion-option>
+              <ion-option value="irregular">Irregular</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-4>
+          <ion-item>
+            <ion-input type="text" placeholder="Largura"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col col-4>
+          <ion-item>
+            <ion-input type="text" placeholder="Comprimento"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col col-4>
+          <ion-item>
+            <ion-input type="text" placeholder="Profundidade média"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <br>
+    <button ion-button color="primary" full (click)="navegarParaRealizaTratamento()">Salvar</button> 
+    <!--    <button ion-button color="primary" block (click)="doPrompt()">Salvar piscina</button> <!-- Esta linha é para implementação do Salvar que abre um prompt para inserir o nome da piscina -->
+    <!-- <br>
+    <button ion-button full color="light" (click)="voltarParaHomePage()">Home (temp)</button>
+    <button ion-button color="light" full (click)="navegarParaRealizaTratamento()">Realizar Tratamento (temp)</button> -->
+  </ion-list>
+</ion-content>

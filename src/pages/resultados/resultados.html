@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Resultados</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6>
+        <ion-input type="text" placeholder="Data" [(ngModel)]="data"></ion-input>
+      </ion-col>
+      <ion-col col-6>
+        <ion-input type="text" placeholder="Nome da piscina" [(ngModel)]="nome"></ion-input>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-list>
+    <h6>Resultado da Alcalinidade Total</h6>
+    <p>Bacon ipsum dolor amet strip steak kevin pancetta, chuck cupim capicola picanha t-bone landjaeger jerky beef ribs meatloaf.</p>
+ 
+    <!--<ion-input type="text" placeholder="" [(ngModel)]="alcalinidadetotal"></ion-input> -->
+    <h6>Resultado do PH</h6>
+      <p>Bacon ipsum dolor amet strip steak kevin pancetta, chuck cupim capicola picanha t-bone landjaeger jerky beef ribs meatloaf.</p>
+ 
+    <h6>Resultado do Cloro Livre</h6>
+    <p>Bacon ipsum dolor amet strip steak kevin pancetta, chuck cupim capicola picanha t-bone landjaeger jerky beef ribs meatloaf.</p>
+  </ion-list>
+
+  <br>
+  <!--<button ion-button color="primary" full (click)="navegarParaRealizaTratamento()">Salvar</button>
+        <button ion-button color="primary" block (click)="doPrompt()">Salvar piscina</button> -->
+  <br>
+  <!-- <button ion-button full color="light" (click)="voltarParaHomePage()">Home (temp)</button>
+<button ion-button color="light" full (click)="navegarParaRealizaTratamento()">Realizar Tratamento (temp)</button> -->
+</ion-content>
