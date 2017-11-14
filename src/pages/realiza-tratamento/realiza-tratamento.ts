@@ -13,7 +13,6 @@ export class RealizaTratamentoPage {
 
 
 
-  
   ionViewDidLoad() {
     console.log('ionViewDidLoad RealizaTratamentoPage');
   }
