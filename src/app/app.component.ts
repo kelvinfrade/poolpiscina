@@ -4,6 +4,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
+import { IntroPage } from '../pages/intro/intro';
 // import { CadastraPiscinaPage } from '../pages/cadastra-piscina/cadastra-piscina';
 // import { RealizaTratamentoPage } from '../pages/realiza-tratamento/realiza-tratamento';
 
@@ -11,7 +12,7 @@ import { HomePage } from '../pages/home/home';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = HomePage;
+  rootPage:any = IntroPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

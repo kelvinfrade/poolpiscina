@@ -12,3 +12,31 @@
     </button>
   </ion-list>
 </ion-content>
+
+<!-- <form [formGroup]="formgroup">
+  <ion-list>
+    <ion-item>
+      <ion-label>
+        Firstname
+      </ion-label>
+      <ion-input type="text" formControlName="firstname"></ion-input>
+    </ion-item>
+
+    <ion-item *ngIf="firstname.hasError('required') && firstname.touched">
+        <p> *Firstname is required </p>
+      </ion-item>
+
+    <ion-item>
+      <ion-label>
+        Lastname
+      </ion-label>
+      <ion-input type="text" formControlName="lastname"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="lastname.hasError('required') && lastname.touched">
+        <p> *Lastname is required </p>
+      </ion-item>
+  </ion-list>
+
+  <button clear ion-button>Enviar</button>
+
+</form> -->
