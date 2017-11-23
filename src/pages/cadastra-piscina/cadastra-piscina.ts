@@ -2,6 +2,7 @@ import { HomePage } from '../home/home';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AlertController } from 'ionic-angular'; //para usar o alerta usado para informar o nome da piscina
+import firebase from 'firebase';
 
 @IonicPage()
 @Component({
@@ -10,11 +11,18 @@ import { AlertController } from 'ionic-angular'; //para usar o alerta usado para
 })
 export class CadastraPiscinaPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
+  public minhaPiscina = {};
+
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+    public alertCtrl: AlertController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CadastraPiscinaPage');
+    const piscinaRef: firebase.database.Reference = firebase.database().ref(`/piscina1/`);
+    piscinaRef.on('value', piscinaSnapshot => {
+    this.minhaPiscina = piscinaSnapshot.val();
+    });
   }
 
   doPrompt() {
@@ -51,6 +59,27 @@ export class CadastraPiscinaPage {
 
   navegarParaRealizaTratamento(): void {
     this.navCtrl.push('RealizaTratamentoPage');
+  }
+
+  criaPiscina(nome: string, volume: number) {
+    const piscinaRef: firebase.database.Reference = firebase.database().ref(`/piscina1/`);
+    piscinaRef.set({
+      nome,
+      volume
+    })
+  }
+
+  atualizaPiscina(nome: string, volume: number) {
+    const piscinaRef: firebase.database.Reference = firebase.database().ref(`/piscina1/`);
+    piscinaRef.update({
+      nome,
+      volume
+    })
+  }
+
+  deletaPiscina(): void {
+    const piscinaRef: firebase.database.Reference = firebase.database().ref(`/piscina1/`);
+    piscinaRef.remove()
   }
 
 }

@@ -3,8 +3,8 @@ import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { HomePage } from '../pages/home/home';
 import { IntroPage } from '../pages/intro/intro';
+import firebase from 'firebase';
 // import { CadastraPiscinaPage } from '../pages/cadastra-piscina/cadastra-piscina';
 // import { RealizaTratamentoPage } from '../pages/realiza-tratamento/realiza-tratamento';
 
@@ -21,6 +21,16 @@ export class MyApp {
       statusBar.styleDefault();
       splashScreen.hide();
     });
+
+    firebase.initializeApp({
+      apiKey: "AIzaSyBmUzJf4UyaGXcJ9PrP10gFhcuO3q_z2mE",
+      authDomain: "apppoolpiscina.firebaseapp.com",
+      databaseURL: "https://apppoolpiscina.firebaseio.com",
+      projectId: "apppoolpiscina",
+      storageBucket: "apppoolpiscina.appspot.com",
+      messagingSenderId: "668220642223"
+    });
+
   }
 }
 

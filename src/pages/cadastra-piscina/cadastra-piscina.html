@@ -5,8 +5,10 @@
 </ion-header>
 
 <ion-content padding>
+
   <ion-list>
-    <h6>Nome da piscina</h6> <!-- Esta linha sairá para implementação do Salvar com prompt que pergunta o nome da piscina -->
+    <h6>Nome da piscina</h6>
+    <!-- Esta linha sairá para implementação do Salvar com prompt que pergunta o nome da piscina -->
     <ion-item>
       <ion-input type="text" placeholder="Ex: Piscina de BH" [(ngModel)]="nome"></ion-input>
     </ion-item>
@@ -51,7 +53,11 @@
       </ion-row>
     </ion-grid>
     <br>
-    <button ion-button color="primary" full (click)="navegarParaRealizaTratamento()">Salvar</button> 
+    <button ion-button block color="primary" (click)="criaPiscina(nome, volume); navegarParaRealizaTratamento();">Cadastrar Piscina</button>
+    <p>Nome: {{ minhaPiscina.nome }} Volume: {{ minhaPiscina.volume }}</p>
+    <!--<button ion-button block color="secondary" (click)="atualizaPiscina(nome, volume)">Atualiza Piscina</button>-->
+    <button ion-button block color="secondary" (click)="deletaPiscina(nome, volume)">Deleta Piscina</button>
+
     <!--    <button ion-button color="primary" block (click)="doPrompt()">Salvar piscina</button> <!-- Esta linha é para implementação do Salvar que abre um prompt para inserir o nome da piscina -->
     <!-- <br>
     <button ion-button full color="light" (click)="voltarParaHomePage()">Home (temp)</button>

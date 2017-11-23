@@ -11,8 +11,6 @@ export class RealizaTratamentoPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-
-
   ionViewDidLoad() {
     console.log('ionViewDidLoad RealizaTratamentoPage');
   }
@@ -29,5 +27,5 @@ export class RealizaTratamentoPage {
     this.navCtrl.push('ResultadosPage');
   }
 
-  
+
 }
