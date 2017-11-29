@@ -12,9 +12,6 @@ log.txt
 .vscode/
 npm-debug.log*
 
-www/
-$RECYCLE.BIN/
-
 .DS_Store
 Thumbs.db
 UserInterfaceState.xcuserstate
