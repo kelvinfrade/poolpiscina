@@ -21,10 +21,9 @@ export class CadastraPiscinaPage {
     console.log('ionViewDidLoad CadastraPiscinaPage');
     const piscinaRef: firebase.database.Reference = firebase.database().ref(`/piscina1/`);
     piscinaRef.on('value', piscinaSnapshot => {
-    this.minhaPiscina = piscinaSnapshot.val();
+      this.minhaPiscina = piscinaSnapshot.val();
     });
   }
-
   doPrompt() {
     let prompt = this.alertCtrl.create({
       title: 'Salvar piscina',
@@ -62,24 +61,41 @@ export class CadastraPiscinaPage {
   }
 
   criaPiscina(nome: string, volume: number) {
-    const piscinaRef: firebase.database.Reference = firebase.database().ref(`/piscina1/`);
-    piscinaRef.set({
+    let piscinaRef = firebase.database().ref('piscina');
+    let novaPiscina = piscinaRef.push();
+    novaPiscina.set({
       nome,
       volume
-    })
+    });
+    let path = novaPiscina.toString();
+    console.log(path);
+    let nomeDaPiscina = nome;
+    console.log("O nome da piscina cadastrada é ", nomeDaPiscina);
   }
 
-  atualizaPiscina(nome: string, volume: number) {
-    const piscinaRef: firebase.database.Reference = firebase.database().ref(`/piscina1/`);
-    piscinaRef.update({
-      nome,
-      volume
-    })
+  excluiPiscina(nome: string) {
+    var ref = firebase.database().ref('apppoolpiscina/piscina');
+    ref.remove()
+      .then(function () {
+        console.log("Remove succeeded.")
+      })
+      .catch(function (error) {
+        console.log("Remove failed: " + error.message)
+      });
+    
   }
 
-  deletaPiscina(): void {
-    const piscinaRef: firebase.database.Reference = firebase.database().ref(`/piscina1/`);
-    piscinaRef.remove()
-  }
+atualizaPiscina(nome: string, volume: number) {
+  const piscinaRef: firebase.database.Reference = firebase.database().ref(`/piscina1/`);
+  piscinaRef.update({
+    nome,
+    volume
+  })
+}
+
+deletaPiscina(): void {
+  const piscinaRef: firebase.database.Reference = firebase.database().ref(`/piscina1/`);
+  piscinaRef.remove()
+}
 
 }

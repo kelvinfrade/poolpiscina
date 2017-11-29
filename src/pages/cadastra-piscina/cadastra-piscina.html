@@ -54,9 +54,10 @@
     </ion-grid>
     <br>
     <button ion-button block color="primary" (click)="criaPiscina(nome, volume); navegarParaRealizaTratamento();">Cadastrar Piscina</button>
-    <p>Nome: {{ minhaPiscina.nome }} Volume: {{ minhaPiscina.volume }}</p>
+    <!-- <p>Nome: {{ minhaPiscina.nome }} Volume: {{ minhaPiscina.volume }}</p> -->
     <!--<button ion-button block color="secondary" (click)="atualizaPiscina(nome, volume)">Atualiza Piscina</button>-->
-    <button ion-button block color="secondary" (click)="deletaPiscina(nome, volume)">Deleta Piscina</button>
+    <button ion-button block color="secondary" (click)="excluiPiscina(nome, volume)">Exclui Piscina</button>
+ <!--   <button ion-button block color="secondary" (click)="deletaPiscina(nome, volume)">Deleta Piscina</button>-->
 
     <!--    <button ion-button color="primary" block (click)="doPrompt()">Salvar piscina</button> <!-- Esta linha é para implementação do Salvar que abre um prompt para inserir o nome da piscina -->
     <!-- <br>
